@@ -4,7 +4,7 @@ seconds = 10  # We want to do something on every 10 seconds
 
 
 def do_it():
-    print 'Printed from a thread based scheduler'
+    print 'Printed from a process based scheduler'
 
 
 scheduler = SimpleThreadScheduler(seconds, do_it, deamon=False)
