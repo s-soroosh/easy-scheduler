@@ -49,7 +49,7 @@ class ThreadSimpleScheduler(Scheduler):
 class ProcessSimpleScheduler(Scheduler):
     def run(self):
         process = multiprocessing.Process(name='SCHEDULER-' + str(uuid.uuid4()), target=self._decorate_task())
-        process.daemon = True
+        process.daemon = self.deamon
         process.start()
         return process
 
