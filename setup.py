@@ -7,7 +7,7 @@ setup(
     description='An easy and lighweight scheduler',
     author='Soroosh Sarabadani',
     author_email='soroosh.sarabadani@gmail.com',
-    url='https://github.com/peterldowns/mypackage',
+    url='https://github.com/psycho-ir/easy-scheduler',
     keywords=['scheduler', 'thread base scheduler', 'process based scheduler'],
     classifiers=[],
 )
