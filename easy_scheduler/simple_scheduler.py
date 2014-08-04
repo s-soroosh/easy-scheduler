@@ -37,7 +37,7 @@ class Scheduler:
         pass
 
 
-class ThreadSimpleScheduler(Scheduler):
+class SimpleThreadScheduler(Scheduler):
     def run(self):
         print 'scheduler started'
         thread = threading.Thread(name='SCHEDULER-' + str(uuid.uuid4()), target=self._decorate_task())
@@ -46,7 +46,7 @@ class ThreadSimpleScheduler(Scheduler):
         return thread
 
 
-class ProcessSimpleScheduler(Scheduler):
+class SimpleProcessScheduler(Scheduler):
     def run(self):
         process = multiprocessing.Process(name='SCHEDULER-' + str(uuid.uuid4()), target=self._decorate_task())
         process.daemon = self.deamon
