@@ -2,8 +2,8 @@ from distutils.core import setup
 
 setup(
     name='easy-scheduler',
-    packages=['easy_scheduler'],  # this must be the same as the name above
-    version='0.1.1',
+    packages=['easy_scheduler'],
+    version='0.1.2',
     description='An easy and lighweight scheduler',
     author='Soroosh Sarabadani',
     author_email='soroosh.sarabadani@gmail.com',
