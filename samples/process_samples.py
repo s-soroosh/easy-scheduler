@@ -1,6 +1,7 @@
+from time import sleep
 from easy_scheduler.simple_scheduler import SimpleProcessScheduler
 
-seconds = 10  # We want to do something on every 10 seconds
+seconds = 1  # We want to do something on every 10 seconds
 
 
 def do_it():
@@ -9,3 +10,9 @@ def do_it():
 
 scheduler = SimpleProcessScheduler(seconds, do_it, deamon=False)
 scheduler.run()
+
+sleep(10)
+scheduler.stop()
+sleep(10)
+scheduler.resume()
+sleep(10)

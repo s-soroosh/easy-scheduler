@@ -11,9 +11,10 @@ import threading
 class Scheduler:
     __metaclass__ = ABCMeta
 
-    def __init__(self, seconds, code,*args,**kwargs):
+    def __init__(self, seconds, code, *args, **kwargs):
         self.seconds = seconds
         self.code = code
+        self._stopped = False
         if kwargs.has_key('deamon'):
             self.deamon = kwargs['deamon']
         else:
@@ -21,7 +22,7 @@ class Scheduler:
 
     def _decorate_task(self):
         def result():
-            while (True):
+            while (not self._stopped):
                 try:
                     self.code()
                 except Exception as e:
@@ -31,6 +32,13 @@ class Scheduler:
 
 
         return result
+
+    def stop(self):
+        self._stopped = True
+
+    def resume(self):
+        self._stopped = False
+        self.run()
 
     @abstractmethod
     def run(self):
